@@ -6,7 +6,7 @@
 # catalog-version 0.94
 Name:		texlive-graphviz
 Version:	0.94
-Release:	9
+Release:	10
 Summary:	Write graphviz (dot+neato) inline in LaTeX documents
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/graphviz
