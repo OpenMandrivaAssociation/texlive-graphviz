@@ -1,6 +1,6 @@
 Name:		texlive-graphviz
 Version:	31517
-Release:	1
+Release:	2
 Summary:	Write graphviz (dot+neato) inline in LaTeX documents
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/graphviz
