@@ -3,7 +3,7 @@ Version:	31517
 Release:	2
 Summary:	Write graphviz (dot+neato) inline in LaTeX documents
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/graphviz
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/graphviz
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/graphviz.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/graphviz.doc.r%{version}.tar.xz
