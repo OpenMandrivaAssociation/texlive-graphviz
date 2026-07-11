@@ -1,56 +1,21 @@
-Name:		texlive-graphviz
-Version:	31517
-Release:	2
+%global tl_name graphviz
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.94
+Release:	%{tl_revision}.1
 Summary:	Write graphviz (dot+neato) inline in LaTeX documents
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/graphviz
-License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/graphviz.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/graphviz.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/graphviz.source.r%{version}.tar.xz
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/graphviz.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/graphviz.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/graphviz.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package allows inline use of graphviz code, in a LaTeX
-document.
+The package allows inline use of graphviz code, in a LaTeX document.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/graphviz/graphviz.sty
-%doc %{_texmfdistdir}/doc/latex/graphviz/LICENSE
-%doc %{_texmfdistdir}/doc/latex/graphviz/Makefile
-%doc %{_texmfdistdir}/doc/latex/graphviz/README
-%doc %{_texmfdistdir}/doc/latex/graphviz/README.md
-%doc %{_texmfdistdir}/doc/latex/graphviz/graphviz.pdf
-%doc %{_texmfdistdir}/doc/latex/graphviz/test/Makefile
-%doc %{_texmfdistdir}/doc/latex/graphviz/test/body.tex
-%doc %{_texmfdistdir}/doc/latex/graphviz/test/pdf-singlefile-tmpdir.tex
-%doc %{_texmfdistdir}/doc/latex/graphviz/test/pdf-singlefile.tex
-%doc %{_texmfdistdir}/doc/latex/graphviz/test/pdf-tmpdir.tex
-%doc %{_texmfdistdir}/doc/latex/graphviz/test/pdf.tex
-%doc %{_texmfdistdir}/doc/latex/graphviz/test/ps.tex
-#- source
-%doc %{_texmfdistdir}/source/latex/graphviz/graphviz.dtx
-%doc %{_texmfdistdir}/source/latex/graphviz/graphviz.ins
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
